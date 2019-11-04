@@ -34,12 +34,12 @@ def updatetp(celular, proyecto, ambito):
     client = Client(wsdl=wsdl, transport=transport, plugins=[history])
     service = client.create_service(binding, location)
     try:
-        if proyecto == "Colsubsidio" and ambito == "Bases de datos":
-            final_num = "*03" + str(celular)
+        if proyecto == "miproyecto" and ambito == "miambito":
+            final_num = "03" + str(celular)
             resp = service.updateTransPattern(calledPartyTransformationMask=final_num, pattern='44904', routePartitionName="Internas")
             return "Cambio realizado por favor verificar con una llamada"
         elif proyecto == "Colsubsidio" and ambito == "Microsoft":
-            final_num = "*03" + str(celular)
+            final_num = "03" + str(celular)
             resp = service.updateTransPattern(calledPartyTransformationMask=final_num, pattern='44903',
                                               routePartitionName="Internas")
             return "Cambio realizado por favor verificar con una llamada"
